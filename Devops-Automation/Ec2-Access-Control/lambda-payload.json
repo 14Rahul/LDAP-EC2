@@ -1,7 +1,7 @@
 {
   "ldap_access": [
     {
-      "_comment": "Ohio Dev Server",
+      "_comment": "Ohio Dev",
       "instances": [
         "i-093d76bcab48315a1"
       ],
