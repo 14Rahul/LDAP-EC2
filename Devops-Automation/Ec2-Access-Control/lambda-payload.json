@@ -1,0 +1,21 @@
+{
+  "ldap_access": [
+    {
+      "_comment": "Ohio Dev Access",
+      "instances": [
+        "i-093d76bcab48315a1"
+      ],
+      "key": "",
+      "value": "",
+      "permissions": [
+        {
+          "ad_user": "Domain\\ Users",
+          "m_user": "ALL"
+        }
+      ],
+      "regions": [
+        "us-east-2"
+      ]
+    }
+  ]
+}
