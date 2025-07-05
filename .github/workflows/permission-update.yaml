@@ -1,0 +1,22 @@
+name: Update user permissions on EC2
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'Devops-Automation/Ec2-Access-Control/lambda-payload.json'
+jobs:
+  UpdatePermissions:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v3
+      - name: Assume AWS IAM Role
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::346180667011:role/lambda-access-role
+          aws-region: us-east-2
+      - name: Invoke lambda with new Permissions
+        run: aws lambda invoke --function-name OhLambdaLdapAccessConfig --cli-read-timeout 0 --payload fileb:///home/runner/work/LDAP-EC2/LDAP-EC2/Devops-Automation/Ec2-Access-Control/lambda-payload.json --region us-east-2 out --log-type Tail --query 'LogResult' --output text | base64 --decode
