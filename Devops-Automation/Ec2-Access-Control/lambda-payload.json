@@ -10,8 +10,12 @@
       "value": "",
       "permissions": [
         {
-          "ad_user": "Domain\\ Users",
+          "ad_user": "Devops",
           "m_user": "ALL"
+        },
+        {
+          "ad_user": "apps",
+          "m_user": "appuser"
         }
       ],
       "regions": [
